@@ -952,6 +952,14 @@ def date_range(
     closed=None,
     **kwargs,
 ) -> DatetimeIndex:
+    
+    if closed is None:
+        left_closed == "left" & right_closed == "right"
+      elif closed == "left":
+        left_closed = True
+      elif closed == "right":
+        right_closed = True
+    
     """
     Return a fixed frequency DatetimeIndex.
 
